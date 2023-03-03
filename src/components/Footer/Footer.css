@@ -1,0 +1,18 @@
+.Footer {
+    padding: 5px 12px;
+}
+
+.Footer>select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    cursor: pointer;
+
+}
+
+.Footer>p {
+    font-size: 10px;
+    color: white;
+    word-wrap: break-word;
+    margin: 8px 0;
+}

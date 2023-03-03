@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./views/HomePage/index.js";
+import Member from "./views/Member/index.js";
+import VIPRoomUseRecord from "./views/VIPRoomUseRecord/index.js";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Header />
+        <Footer />
+      </div>
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/member" element={<Member />} />
+          <Route path="/viproomuserecord" element={<VIPRoomUseRecord />} />
+        </Routes>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
