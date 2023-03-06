@@ -1,8 +1,8 @@
-.App {
+.allSection {
     display: flex;
 }
 
-.App>div {
+.allSection>div {
     width: 300px;
     height: 100vh;
     background-color: #080836;
