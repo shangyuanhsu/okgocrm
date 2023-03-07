@@ -1,13 +1,15 @@
 import "./NavBar.css";
+import {  Link } from "react-router-dom";
+
 const NavBar = () => {
   return (
     <nav className="NavBar">
-      <a href="./">HOME</a>
-      <a href="./member">MEMBER</a>
-      <a href="./viproomuserecord">VIP ROOM USE RECORD</a>
-      <a href="./viproomuserecord">TEST SHOW</a>
-      <a href="./viproomuserecord">TEST SHOW</a>
-      <a href="./viproomuserecord">TEST SHOW</a>
+      <Link to="/">HOME</Link>
+      <Link to="/member">MEMBER</Link>
+      <Link to="/viproomuserecord">VIP ROOM USE RECORD</Link>
+      <Link to="/viproomuserecord">TEST SHOW</Link>
+      <Link to="/viproomuserecord">TEST SHOW</Link>
+      <Link to="/viproomuserecord">TEST SHOW</Link>
     </nav>
   );
 };

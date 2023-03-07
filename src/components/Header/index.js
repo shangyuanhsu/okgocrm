@@ -1,21 +1,23 @@
 import "./Header.css";
 import NavBar from "../NavBar";
+import { Link } from "react-router-dom";
+
 
 const Header = () => {
   return (
     <header className="Header">
       <h1>
-        <a href="./">OKGO CRM</a>
+        <Link to="/">OKGO CRM</Link>
       </h1>
       <div>
         <p>Sara</p>
         <div>
-          <a>
+          <Link>
             <span className="material-symbols-outlined">settings</span>
-          </a>
-          <a href="./login">
+          </Link>
+          <Link to="/login">
             <span className="material-symbols-outlined">logout</span>
-          </a>
+          </Link>
         </div>
       </div>
       <NavBar />

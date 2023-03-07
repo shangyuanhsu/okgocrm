@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Signup = () => {
   return (
     <div className="Signup">
@@ -36,9 +38,9 @@ const Signup = () => {
             required
           />
           <div>
-            <a href="/" id="loginBtn" className="aBtn">
+            <Link to="/" id="loginBtn" className="aBtn">
               Sign up
-            </a>
+            </Link>
           </div>
         </form>
         <div className="anotherChoice">
@@ -48,17 +50,17 @@ const Signup = () => {
             <span></span>
           </p>
           <div>
-            <img src={require("../../img/google-logo.png")} />
+            <img src={require("../../img/google-logo.png")} alt="google logo"/>
             <span>Sign up with Google</span>
           </div>
           <div>
-            <img src={require("../../img/apple-logo.png")} />
+            <img src={require("../../img/apple-logo.png")} alt="apple logo"/>
             <span>Sign up with Apple</span>
           </div>
         </div>
         <div className="anotherBox">
           <span>Already have an account?</span>
-          <a href="./login">Log in</a>
+          <Link to="/login">Log in</Link>
         </div>
       </div>
     </div>
