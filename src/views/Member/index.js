@@ -9,7 +9,7 @@ const Member = () => {
         <Footer />
       </div>
       <main>
-        <h2>MEMBER</h2>
+        <h2>Member</h2>
       </main>
     </div>
   );

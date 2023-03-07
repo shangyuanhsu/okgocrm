@@ -8,7 +8,7 @@ const VIPRoomUseRecord = () => {
         <Footer />
       </div>
       <main>
-        <h2>VIP ROOM USE RECORD</h2>
+        <h2>VIP Room Use Record</h2>
       </main>
     </div>
   );

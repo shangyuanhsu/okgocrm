@@ -9,7 +9,14 @@ const Header = () => {
       </h1>
       <div>
         <p>Sara</p>
-        <span class="material-symbols-outlined">logout</span>
+        <div>
+          <a>
+            <span className="material-symbols-outlined">settings</span>
+          </a>
+          <a href="./login">
+            <span className="material-symbols-outlined">logout</span>
+          </a>
+        </div>
       </div>
       <NavBar />
     </header>

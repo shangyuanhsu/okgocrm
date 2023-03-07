@@ -1,10 +1,24 @@
-import "./Login.css";
-const Login = () => {
+const Signup = () => {
   return (
-    <div className="Login">
+    <div className="Signup">
       <div>
-        <h3>Log in</h3>
+        <h3>Sign up</h3>
         <form>
+          <p>First name</p>
+          <input
+            type="text"
+            autoComplete="username"
+            placeholder="your first name"
+            required
+          />
+          <p>Last name</p>
+          <input
+            type="text"
+            autoComplete="username"
+            placeholder="your last name"
+            required
+          />
+
           <p>Email</p>
           <input
             type="email"
@@ -14,7 +28,6 @@ const Login = () => {
           />
           <p>
             <span>Password</span>
-            <a>forgot password?</a>
           </p>
           <input
             type="password"
@@ -24,7 +37,7 @@ const Login = () => {
           />
           <div>
             <a href="/" id="loginBtn" className="aBtn">
-              Log in
+              Sign up
             </a>
           </div>
         </form>
@@ -36,20 +49,20 @@ const Login = () => {
           </p>
           <div>
             <img src={require("../../img/google-logo.png")} />
-            <span>log in with Google</span>
+            <span>Sign up with Google</span>
           </div>
           <div>
             <img src={require("../../img/apple-logo.png")} />
-            <span>log in with Apple</span>
+            <span>Sign up with Apple</span>
           </div>
         </div>
         <div className="anotherBox">
-          <span>Don't have an account?</span>
-          <a href="./signup">Sign up</a>
+          <span>Already have an account?</span>
+          <a href="./login">Log in</a>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

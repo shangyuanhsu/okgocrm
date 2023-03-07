@@ -23,6 +23,8 @@
     font-size: 20px;
 }
 
-.Header>div>span {
+.Header>div>div>a {
+    color: white;
     cursor: pointer;
+    margin-left: 10px;
 }

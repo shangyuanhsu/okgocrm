@@ -2,6 +2,7 @@ import "./NavBar.css";
 const NavBar = () => {
   return (
     <nav className="NavBar">
+      <a href="./">HOME</a>
       <a href="./member">MEMBER</a>
       <a href="./viproomuserecord">VIP ROOM USE RECORD</a>
       <a href="./viproomuserecord">TEST SHOW</a>

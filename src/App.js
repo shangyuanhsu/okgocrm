@@ -5,6 +5,7 @@ import Member from "./views/Member";
 import VIPRoomUseRecord from "./views/VIPRoomUseRecord";
 
 import Login from "./views/Login/";
+import Signup from "./views/Signup/";
 import NotFound from "./views/NotFound/";
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/member" element={<Member />} />
         <Route path="/viproomuserecord" element={<VIPRoomUseRecord />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
