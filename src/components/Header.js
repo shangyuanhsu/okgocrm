@@ -1,9 +1,9 @@
-// import { useContext, useState } from "react";
-import Link from "next/link";
 import styles from "../styles/Header.module.css";
+import Link from "next/link";
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import NavBar from "./NavBar";
+// =========================================
 const Header = () => {
   return (
     <header className={styles.Header}>

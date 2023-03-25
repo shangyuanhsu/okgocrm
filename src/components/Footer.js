@@ -1,11 +1,14 @@
-import styles from '../styles/Footer.module.css';
+import styles from "../styles/Footer.module.css";
 import React, { useState } from "react";
 import FormControl from "@mui/material/FormControl";
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+// =========================================
 const Footer = () => {
+  // 地點
   const [location, setLocation] = useState(1);
-
+  // =========================================
+  // 選地點
   const handleChange = (event) => {
     setLocation(event.target.value);
   };
