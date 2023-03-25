@@ -65,7 +65,7 @@ const Login = () => {
             </div>
           </div>
           <div className={styles.anotherBox}>
-            <span>Don't have an account?</span>
+            <span>Do not have an account?</span>
             <Link href="/signup">Sign up</Link>
           </div>
         </div>
