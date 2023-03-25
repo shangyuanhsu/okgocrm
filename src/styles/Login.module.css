@@ -1,0 +1,121 @@
+.Login, .Signup {
+    background-color: #efefff;
+    height: 100vh;
+    position: relative;
+
+}
+
+.Login>div, .Signup>div {
+    width: 88%;
+    max-width: 500px;
+    height: 88vh;
+    max-height: 512px;
+    padding: 24px;
+    border-radius: 12px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    overflow-y: auto;
+}
+
+.Signup>div {
+    max-height: 665px;
+}
+
+.Login>div>h3, .Signup>div>h3 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 24px;
+
+}
+
+.Login form>input, .Signup form>input {
+    display: block;
+    width: 100%;
+    /* border: 1px solid #080836; */
+    border: 1px solid #d7d7dc;
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.Login form>p, .Signup form>p {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.Login form>p>a, .Signup form>p>a {
+    font-size: 12px;
+    color: gray;
+    font-weight: normal;
+}
+
+.aBtn {
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    background-color: #2c26d8;
+    color: white;
+    margin: 20px 0;
+}
+
+.aBtn:hover {
+    background-color: #2d27f3;
+}
+
+.anotherChoice>p {
+    display: flex;
+    align-items: center;
+    color: rgb(174, 174, 174);
+}
+
+.anotherChoice>p>span:nth-child(even) {
+    padding: 0 20px;
+}
+
+.anotherChoice>p>span:nth-child(odd) {
+    width: 100%;
+    border-top: 1px solid rgb(174, 174, 174);
+}
+
+.anotherChoice>div {
+    cursor: pointer;
+    padding: 2px 8px;
+    border: 1px solid #d7d7dc;
+    border-radius: 4px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.anotherChoice>div>img {
+    height: 100%;
+    margin-right: 20px;
+}
+
+.anotherChoice>div>span {
+    width: 152px;
+}
+
+.anotherBox {
+    text-align: center;
+}
+
+.anotherBox>a {
+    color: #2c26d8;
+    font-weight: bold;
+    margin-left: 12px;
+}

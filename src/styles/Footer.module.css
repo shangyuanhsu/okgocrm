@@ -1,0 +1,16 @@
+.Footer {
+    padding: 5px 12px;
+}
+
+.Footer .mySelect {
+    background-color: white;
+    height: 42px;
+}
+
+.Footer>p {
+    font-size: 10px;
+    color: white;
+    word-wrap: break-word;
+    margin: 8px 0;
+    text-align: center;
+}

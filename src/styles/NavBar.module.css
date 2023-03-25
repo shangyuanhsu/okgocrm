@@ -1,0 +1,11 @@
+.NavBar>a {
+    display: block;
+    padding: 10px 8px;
+    color: white;
+}
+
+.NavBar>a:hover, .NavBar>.check {
+    background-color: white;
+    color: #080836;
+    font-weight: bold;
+}

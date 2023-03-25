@@ -1,0 +1,19 @@
+.SearchMember {
+    display: flex;
+    align-items: center;
+}
+
+.SearchTitle {
+    font-weight: bold;
+    width: 160px;
+}
+
+.SearchInput {
+    width: 100%;
+}
+
+.SearchInput input {
+    height: 10px;
+}
+
+/* @media only screen and (min-width: 768px) {...} */

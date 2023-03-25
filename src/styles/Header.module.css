@@ -1,0 +1,30 @@
+.Header>h1 {
+    margin-bottom: 20px;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.Header>h1>a {
+    color: white;
+}
+
+.Header>div {
+    padding: 5px 8px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.Header>div>p {
+    font-size: 20px;
+}
+
+.Header>div>div>a {
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
