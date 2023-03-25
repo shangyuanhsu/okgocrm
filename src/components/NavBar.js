@@ -9,10 +9,10 @@ const NavBar = () => {
   const nav = [
     { name: "Home", url: "/" },
     { name: "Member", url: "/member" },
-    // { name: "Rewards Redemption", url: "/RewardsRedemption" },
-    // { name: "Point Registration", url: "/PointRegistration" },
-    // { name: "Mission", url: "/Mission" },
-    // { name: "VIP Room Use Recode", url: "/viproomuserecord" },
+    { name: "Rewards Redemption", url: "/rewardsRedemption" },
+    { name: "Point Registration", url: "/pointRegistration" },
+    { name: "Mission", url: "/mission" },
+    { name: "VIP Room Use Recode", url: "/viproomuseRecord" },
   ];
 
   return (

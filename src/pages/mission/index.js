@@ -1,14 +1,9 @@
 import Head from "next/head";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import styles from "../styles/Home.module.css";
-// import Image from "next/image";
-// import { Inter } from "next/font/google";
-// import styles from "@/styles/Home.module.css";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import styles from "../../styles/Home.module.css";
 
-// const inter = Inter({ subsets: ["latin"] });
-
-const Home = ()=> {
+const mission = () => {
   return (
     <>
       <Head>
@@ -23,10 +18,10 @@ const Home = ()=> {
           <Footer />
         </div>
         <main>
-          <h2>Home</h2>
+          <h2>mission</h2>
         </main>
       </div>
     </>
   );
-}
-export default  Home;
+};
+export default mission;
