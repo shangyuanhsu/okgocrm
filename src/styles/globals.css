@@ -82,11 +82,13 @@ main>h2 a.notThisPage {
   cursor: pointer;
   padding: 4px 4px 2px 4px;
 }
-input[type='text']{
+
+.myInput {
   display: block;
   width: 100%;
   border: 1px solid #d7d7dc;
   border-radius: 4px;
   padding: 8px;
   margin-bottom: 10px;
+
 }

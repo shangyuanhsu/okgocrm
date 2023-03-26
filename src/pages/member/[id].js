@@ -75,14 +75,14 @@ const MemberCard = ({ memberData }) => {
                     <h2> <Link className="notThisPage" href="/member">Member</Link>
                         <ChevronRightIcon fontSize="small" />{member.firstName}&nbsp;{member.lastName}</h2>
                     <section>
-                        <input className={styles.myInput} type="text" value={member.firstName} onChange={(e) => handlenewTxt(e.target.value, "firstName")} />
-                        <input type="text" value={member.lastName} onChange={(e) => handlenewTxt(e.target.value, "lastName")} />
-                        <input type="text" value={member.phoneno} onChange={(e) => handlenewTxt(e.target.value, "phoneno")} />
-                        <input type="text" value={member.email} onChange={(e) => handlenewTxt(e.target.value, "email")} />
-                        <input type="text" value={member.point}  />
-                        <input type="text" value={member.vipCrad.id}  />
-                        <input type="text" value={member.vipCrad.level}  />
-                        <input type="text" value={member.vipCrad.date}  />
+                        <input className="myInput"  type="text" value={member.firstName} onChange={(e) => handlenewTxt(e.target.value, "firstName")} />
+                        <input className="myInput" type="text" value={member.lastName} onChange={(e) => handlenewTxt(e.target.value, "lastName")} />
+                        <input className="myInput" type="text" value={member.phoneno} onChange={(e) => handlenewTxt(e.target.value, "phoneno")} />
+                        <input className="myInput" type="text" value={member.email} onChange={(e) => handlenewTxt(e.target.value, "email")} />
+                        <input className="myInput" type="text" value={member.point}  />
+                        <input className="myInput" type="text" value={member.vipCrad.id}  />
+                        <input className="myInput" type="text" value={member.vipCrad.level}  />
+                        <input className="myInput" type="text" value={member.vipCrad.date}  />
                     </section>
                 </main>
             </div>
