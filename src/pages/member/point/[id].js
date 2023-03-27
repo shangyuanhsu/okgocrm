@@ -9,11 +9,17 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 export const getServerSideProps = (context) => {
   const { id } = context.query;
   const memberContent = {
+    id: "ty8854",
     firstName: "Sherry",
     lastName: "Hsu",
     totalPoint: 2000,
     accumulatedPointsToday: 0,
   };
+  if (id != memberContent.id) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: { memberData: memberContent },
   };
@@ -130,7 +136,6 @@ const MemberCardPiont = ({ memberData }) => {
                 <p>
                   <b>Total Point</b>
                 </p>
-               
               </div>
             </div>
           </section>

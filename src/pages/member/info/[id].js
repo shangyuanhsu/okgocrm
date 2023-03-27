@@ -26,6 +26,11 @@ export const getServerSideProps = (context) => {
       expirationDate: "2027-11-04",
     },
   };
+  if (id != memberContent.id) {
+    return {
+      notFound: true,
+    }
+  }
   return {
     props: { memberData: memberContent },
   };
