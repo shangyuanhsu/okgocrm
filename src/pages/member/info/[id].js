@@ -29,7 +29,7 @@ export const getServerSideProps = (context) => {
   if (id != memberContent.id) {
     return {
       notFound: true,
-    }
+    };
   }
   return {
     props: { memberData: memberContent },

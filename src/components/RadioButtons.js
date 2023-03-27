@@ -32,6 +32,7 @@ const RadioButtons = (props) => {
             value={element.key}
             control={<Radio />}
             label={element.name}
+            disabled={!props.isEdit}
           />
         ))}
       </RadioGroup>
