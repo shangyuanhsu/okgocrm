@@ -163,7 +163,7 @@ const Member = ({ memberData }) => {
   };
   // 選擇會員
   const handleSelectMember = (memberId) => {
-    router.push(`/member/${memberId}`);
+    router.push(`/member/info/${memberId}`);
   };
   // =========================================
   return (

@@ -18,7 +18,9 @@ const NavBar = () => {
     <nav className={styles.NavBar}>
       {nav.map((item, index) => (
         <Link
-          className={router.pathname === item.url ? styles.check : ""}
+          className={
+            "/" + router.pathname.split("/")[1] === item.url ? styles.check : ""
+          }
           href={item.url}
           key={index}
         >

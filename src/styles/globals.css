@@ -43,7 +43,7 @@ main {
 }
 
 main>section {
-  padding: 40px 20px;
+  padding: 10px 20px;
 }
 
 main>h2 {
@@ -55,7 +55,7 @@ main>h2 {
 }
 
 main>h2 a.notThisPage {
-  color: black;
+  color: rgb(142, 142, 142);
 }
 
 
@@ -83,12 +83,92 @@ main>h2 a.notThisPage {
   padding: 4px 4px 2px 4px;
 }
 
+input {
+  outline: none;
+}
+
 .myInput {
   display: block;
   width: 100%;
   border: 1px solid #d7d7dc;
   border-radius: 4px;
   padding: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
+}
 
+.myInputReadonly {
+  border: none;
+  border-bottom: 1px solid #d7d7dc;
+  outline: none;
+}
+
+.myButtonBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myButton {
+  border: none;
+  background: none;
+  margin: 20px;
+  cursor: pointer;
+  display: block;
+  min-width: 150px;
+  font-weight: bold;
+  padding: 10px 2px;
+  border-radius: 4px;
+  color: white;
+  background-color: rgb(171, 171, 171);
+}
+
+.myButtonMain {
+  background-color: #2c26d8;
+}
+
+.myButtonAlert {
+  background-color: #d82626;
+}
+
+.formBlock {
+  border: 1px solid #d7d7dc;
+  padding: 20px 20px 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.formBlockFlex2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.formBlockFlex2>.formBlock {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+
+
+.myTabBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  color: rgb(171, 171, 171);
+}
+
+.myTab {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px;
+  margin: 0 10px;
+  cursor: pointer;
+
+}
+
+.myTabChecked {
+  color: #080836;
+  border-bottom: 1px solid #080836;
 }
