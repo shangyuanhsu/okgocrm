@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 // =========================================
 const Home = () => {
   // const count = useSelector((state) => state.counter.value);
@@ -18,7 +18,7 @@ const Home = () => {
           <Header />
           <Footer />
         </div>
-        
+
         <main>
           <h2>Home</h2>
           {/* {count} */}
