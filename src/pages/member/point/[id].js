@@ -158,24 +158,6 @@ const MemberCardPiont = ({ memberData }) => {
   const handleChange = (event, value) => {
     setPage(value);
   };
-  useEffect(() => {
-    const ans =
-      Date.parse(searchTransactionTo) - Date.parse(searchTransactionFrom);
-    if (ans <= 0) {
-      setSearchTransactionTo("");
-      return;
-    }
-    getNewTransactionRecordsDataArray();
-  }, [searchTransactionFrom]);
-  useEffect(() => {
-    const ans =
-      Date.parse(searchTransactionTo) - Date.parse(searchTransactionFrom);
-    if (ans <= 0) {
-      setSearchTransactionFrom("");
-      return;
-    }
-    getNewTransactionRecordsDataArray();
-  }, [searchTransactionTo]);
 
   const getNewTransactionRecordsDataArray = () => {
     const arrLength = 12;
@@ -363,6 +345,18 @@ const MemberCardPiont = ({ memberData }) => {
   // 交易紀錄選時間
   const handleSearchTransactionTime = (val, key) => {
     key === 0 ? setSearchTransactionFrom(val) : setSearchTransactionTo(val);
+
+    const ans =
+      Date.parse(searchTransactionTo) - Date.parse(searchTransactionFrom);
+    if (ans <= 0) {
+      if (key === 0) {
+        setSearchTransactionFrom("");
+      } else {
+        setSearchTransactionTo("");
+      }
+      return;
+    }
+    getNewTransactionRecordsDataArray();
   };
   return (
     <>
