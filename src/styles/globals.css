@@ -42,6 +42,13 @@ main {
   overflow-y: auto;
 }
 
+@media only screen and (max-width: 1150px) {
+  main {
+    width: 100%;
+    height: auto;
+  }
+}
+
 main>section {
   padding: 10px 20px;
 }
@@ -68,6 +75,13 @@ main>h2 a.notThisPage {
   display: flex;
 }
 
+@media only screen and (max-width: 1150px) {
+  .allSection {
+    display: block;
+
+  }
+}
+
 .allSection>div {
   width: 300px;
   height: 100vh;
@@ -77,6 +91,25 @@ main>h2 a.notThisPage {
   justify-content: space-between;
   flex-direction: column;
 }
+
+
+@media only screen and (max-width: 1150px) {
+
+
+  .allSection>div {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    left: -100vw;
+    transition: left 0.4s;
+  }
+
+  .allSection>div.ham {
+
+    /* left: 0; */
+  }
+}
+
 
 .icobBtn {
   cursor: pointer;

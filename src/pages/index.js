@@ -14,10 +14,11 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="allSection">
-        <div>
+        <div className="ham">
           <Header />
           <Footer />
         </div>
+        
         <main>
           <h2>Home</h2>
           {/* {count} */}
