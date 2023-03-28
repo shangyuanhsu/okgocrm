@@ -2,9 +2,14 @@ import Head from "next/head";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 // =========================================
 const Home = () => {
   // const count = useSelector((state) => state.counter.value);
+  const [isHamOpen, setIsHamOpen] = useState(false);
+  const handleHam = () => {
+    setIsHamOpen(!isHamOpen)
+  };
   return (
     <>
       <Head>
@@ -14,12 +19,19 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="allSection">
-        <div className="ham">
+        <div className={isHamOpen ? "ham" : ""}>
           <Header />
           <Footer />
         </div>
 
         <main>
+          <div className={`hamburger ${isHamOpen ? "closeHamburger" : ""}`} onClick={handleHam}>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
           <h2>Home</h2>
           {/* {count} */}
         </main>

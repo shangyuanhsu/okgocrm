@@ -4,6 +4,8 @@
     margin: 20px 0;
 }
 
+
+
 .transactionRecordsTimeBox>span {
     display: inline-block;
     margin: 0 10px;
@@ -11,6 +13,17 @@
     height: 1px;
     background-color: black;
 }
+
+@media only screen and (max-width: 1150px) {
+    .transactionRecordsTimeBox {
+        display: block;
+    }
+
+    .transactionRecordsTimeBox>span {
+        opacity: 0;
+    }
+}
+
 
 .TransactionRecordsPopcontent {
     margin: 8px 0;

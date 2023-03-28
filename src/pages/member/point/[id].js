@@ -342,10 +342,8 @@ const MemberCardPiont = ({ memberData }) => {
   const handleChangeTab = (tabName) => {
     router.push(`/member/${tabName}/${memberData.id}`);
   };
-  // 交易紀錄選時間
-  const handleSearchTransactionTime = (val, key) => {
-    key === 0 ? setSearchTransactionFrom(val) : setSearchTransactionTo(val);
 
+  const updateTransactionTime = (key) => {
     const ans =
       Date.parse(searchTransactionTo) - Date.parse(searchTransactionFrom);
     if (ans <= 0) {
@@ -358,6 +356,15 @@ const MemberCardPiont = ({ memberData }) => {
     }
     getNewTransactionRecordsDataArray();
   };
+  // 交易紀錄選時間
+  const handleSearchTransactionTime = (val, key) => {
+    key === 0 ? setSearchTransactionFrom(val) : setSearchTransactionTo(val);
+    updateTransactionTime(key);
+  };
+  useEffect(() => {
+    console.log("a");
+    updateTransactionTime(0);
+  }, []);
   return (
     <>
       <Head>
