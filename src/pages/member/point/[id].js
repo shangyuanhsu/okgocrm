@@ -422,7 +422,7 @@ const MemberCardPiont = ({ memberData }) => {
               </div>
               <div>
                 <p>
-                  <b>Today's consumption amount</b>
+                  <b>Today consumption amount</b>
                 </p>
                 <input
                   className={`myInput myInputReadonly`}

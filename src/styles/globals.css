@@ -104,10 +104,10 @@ main>h2 a.notThisPage {
     transition: left 0.4s;
   }
 
-  .allSection>div.ham {
+  /* .allSection>div.ham { */
 
     /* left: 0; */
-  }
+  /* } */
 }
 
 
