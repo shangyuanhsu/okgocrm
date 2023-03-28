@@ -10,16 +10,20 @@
     border-collapse: collapse;
 }
 
-.TableList tbody tr{
+.TableList tbody tr {
     border-bottom: 1px solid rgb(228, 228, 228);
-    cursor: pointer;
+
 }
 
+.TableList tbody.tablePointer {
+    cursor: pointer;
+}
 
 .TableList tr:nth-child(odd) {
     background-color: rgb(246, 246, 246);
 }
-.TableList tr:hover{
+
+.TableList .tablePointer tr:hover {
     background-color: rgb(215, 215, 215);
 }
 

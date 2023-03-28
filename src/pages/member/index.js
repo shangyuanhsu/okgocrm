@@ -96,17 +96,16 @@ export const getServerSideProps = () => {
         phoneno: "77732555",
         email: "okgo01@gmail.com",
         status: "open",
-      }
-    ]
-
-  }
+      },
+    ],
+  };
   return {
     props: { memberData },
   };
 };
 // =========================================
 const Member = ({ memberData }) => {
-  const router = useRouter()
+  const router = useRouter();
   // =========================================
   // 顯示用的資料
   const [memberDataArray, setMemberDataArray] = useState(memberData.data);
@@ -131,11 +130,22 @@ const Member = ({ memberData }) => {
       memberDataArray.filter((item) => item.id.indexOf(memberId) != -1)
     );
   }
+  const tableTitle = () => {
+    return (
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone No</th>
+        <th>E-mail</th>
+        <th>Status</th>
+      </tr>
+    );
+  };
   // 顯示table會員列表
   const showMember = () => {
     const data = memberDataArray.map((element) => {
       return (
-        <tr onClick={() => handleSelectMember(element.id)} key={element.id}>
+        <tr onClick={() => handleSelectMember(element.id)} key={element.id} className="tablePointer">
           <td>{element.id}</td>
           <td>{element.firstName}</td>
           <td>{element.phoneno}</td>
@@ -184,7 +194,7 @@ const Member = ({ memberData }) => {
           <section>
             <SearchMember takeSearchMember={takeSearchMember} />
             <div>
-              <TableList showMember={showMember} />
+              <TableList tableTitle={tableTitle} showData={showMember} hasPointer={true}/>
               {allDataLength > 1 && (
                 <div className="paginationBox">
                   <Pagination
@@ -193,8 +203,8 @@ const Member = ({ memberData }) => {
                     onChange={handleChange}
                   />
                 </div>
-              )}</div>
-
+              )}
+            </div>
           </section>
         </main>
       </div>

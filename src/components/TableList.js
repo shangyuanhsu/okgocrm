@@ -5,16 +5,10 @@ const TableList = (props) => {
   return (
     <div className={styles.TableList}>
       <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Phone No</th>
-            <th>E-mail</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>{props.showMember()}</tbody>
+        <thead>{props.tableTitle()}</thead>
+        <tbody className={props.hasPointer ? styles.tablePointer : ""}>
+          {props.showData()}
+        </tbody>
       </table>
     </div>
   );
