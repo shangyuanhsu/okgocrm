@@ -1,9 +1,13 @@
 import styles from "../styles/Header.module.css";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { useSelector, useDispatch } from "react-redux";
-import { handleHam } from "../features/hamburger/hamburgerSlice";
+import { useDispatch } from "react-redux";
+import {
+  handleHam,
+  handleColseHam,
+} from "../features/hamburger/hamburgerSlice";
 import NavBar from "./NavBar";
 // =========================================
 const Header = () => {
@@ -11,6 +15,13 @@ const Header = () => {
   const handleHamburger = () => {
     dispatch(handleHam());
   };
+
+  const handleResize = () => {
+    dispatch(handleColseHam());
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  }, [handleResize]);
   return (
     <header className={styles.Header}>
       <h1>
@@ -29,7 +40,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <NavBar handleHamburger={handleHamburger}/>
+      <NavBar handleHamburger={handleHamburger} />
     </header>
   );
 };

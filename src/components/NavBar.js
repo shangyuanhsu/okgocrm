@@ -16,7 +16,12 @@ const NavBar = (props) => {
     { name: "VIP Room Use Recode", url: "/viproomuseRecord" },
   ];
 
-
+  const goPage = (url) => {
+    if (window.innerWidth < 1150) {
+      props.handleHamburger();
+    }
+    router.push(url);
+  };
   return (
     <nav className={styles.NavBar}>
       {nav.map((item, index) => (
@@ -24,9 +29,12 @@ const NavBar = (props) => {
           className={
             "/" + router.pathname.split("/")[1] === item.url ? styles.check : ""
           }
-          href={item.url}
+          href=""
           key={index}
-          onClick={props.handleHamburger}
+          onClick={(e) => {
+            e.preventDefault();
+            goPage(item.url);
+          }}
         >
           {item.name}
         </Link>

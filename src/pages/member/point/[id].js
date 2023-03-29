@@ -1,5 +1,5 @@
 import styles from "../../../styles/MemberPoint.module.css";
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
@@ -12,8 +12,11 @@ import Pagination from "@mui/material/Pagination";
 import Hamburger from "../../../components/Hamburger";
 import { useSelector } from "react-redux";
 
+
+
 export const getServerSideProps = (context) => {
   const { id } = context.query;
+
   const memberContent = {
     id: "ty8854",
     firstName: "Sherry",
@@ -31,17 +34,193 @@ export const getServerSideProps = (context) => {
       },
     ],
   };
+  const transactionRecordsArr = [
+    {
+      id: "11",
+      date: "2023-03-28",
+      shop: "shopA",
+      total: 1000,
+      point: 10,
+      details: [
+        {
+          commodity: "commodityA",
+          amount: "200",
+        },
+        {
+          commodity: "commodityb",
+          amount: "800",
+        },
+      ],
+    },
+    {
+      id: "12",
+      date: "2023-03-06",
+      shop: "shopG",
+      total: 120,
+      point: 0,
+      details: [
+        {
+          commodity: "commodityA",
+          amount: "120",
+        },
+      ],
+    },
+    {
+      id: "13",
+      date: "2023-03-06",
+      shop: "shopU",
+      total: 1200,
+      point: 10,
+      details: [
+        {
+          commodity: "commodityA",
+          amount: "100",
+        },
+        {
+          commodity: "commodityB",
+          amount: "100",
+        },
+
+        {
+          commodity: "commodityD",
+          amount: "100",
+        },
+        {
+          commodity: "commodityD",
+          amount: "100",
+        },
+        {
+          commodity: "commodityD",
+          amount: "100",
+        },
+        {
+          commodity: "commodityD",
+          amount: "100",
+        },
+        {
+          commodity: "commodityD",
+          amount: "100",
+        },
+        {
+          commodity: "commodityD",
+          amount: "100",
+        },
+        {
+          commodity: "commodityD",
+          amount: "100",
+        },
+        {
+          commodity: "commodityG",
+          amount: "400",
+        },
+      ],
+    },
+    {
+      id: "14",
+      date: "2023-03-03",
+      shop: "shopD",
+      total: 2000,
+      point: 20,
+      details: [
+        {
+          commodity: "commodityA",
+          amount: "2000",
+        },
+      ],
+    },
+    {
+      id: "15",
+      date: "2023-03-03",
+      shop: "shopS",
+      total: 1200,
+      point: 10,
+      details: [
+        {
+          commodity: "commodityA",
+          amount: "1200",
+        },
+      ],
+    },
+    {
+      id: "16",
+      date: "2023-03-02",
+      shop: "shopU",
+      total: 1200,
+      point: 10,
+      details: [
+        {
+          commodity: "commodityA",
+          amount: "1200",
+        },
+      ],
+    },
+    {
+      id: "17",
+      date: "2023-03-01",
+      shop: "shopY",
+      total: 1200,
+      point: 10,
+      details: [
+        {
+          commodity: "commodityA",
+          amount: "100",
+        },
+      ],
+    },
+    {
+      id: "18",
+      date: "2023-02-24",
+      shop: "shopQ",
+      total: 100,
+      point: 0,
+      details: [
+        {
+          commodity: "commodityA",
+          amount: "100",
+        },
+      ],
+    },
+    {
+      id: "19",
+      date: "2023-02-23",
+      shop: "shopE",
+      total: 100,
+      point: 0,
+      details: [
+        {
+          commodity: "commodityA",
+          amount: "100",
+        },
+      ],
+    },
+    {
+      id: "20",
+      date: "2023-02-22",
+      shop: "shopY",
+      total: 1000,
+      point: 10,
+      details: [
+        {
+          commodity: "commodityA",
+          amount: "1000",
+        },
+      ],
+    },
+  ];
   if (id != memberContent.id) {
     return {
       notFound: true,
     };
   }
   return {
-    props: { memberData: memberContent },
+    props: {
+      memberData: memberContent,
+      transactionRecordsArr: transactionRecordsArr,
+    },
   };
 };
 
-const MemberCardPiont = ({ memberData }) => {
+const MemberCardPiont = ({ memberData, transactionRecordsArr }) => {
   const isHamOpen = useSelector((state) => state.hamburger.value);
   const router = useRouter();
   // 此會員的原始資料
@@ -79,7 +258,7 @@ const MemberCardPiont = ({ memberData }) => {
   const [page, setPage] = useState(1);
   //
   const [transactionRecordsDataArray, setTransactionRecordsDataArray] =
-    useState([]);
+    useState([...transactionRecordsArr]);
   // 總資料長度
   const [allDataLength, setAllDataLength] = useState(0);
   const tableTitle = () => {

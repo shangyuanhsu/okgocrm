@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 // =========================================
 const Home = () => {
   const isHamOpen = useSelector((state) => state.hamburger.value);
-  
+ 
   return (
     <>
       <Head>

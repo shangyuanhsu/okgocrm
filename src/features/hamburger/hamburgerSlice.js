@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 const initialState = {
   value: false,
 };
+
 export const hamburgerSlice = createSlice({
   name: "hamburger",
   initialState,
@@ -10,9 +10,12 @@ export const hamburgerSlice = createSlice({
     handleHam: (state) => {
       state.value = !state.value;
     },
+    handleColseHam: (state) => {
+      state.value =false;
+    },
   },
 });
 
-export const { handleHam } = hamburgerSlice.actions;
+export const { handleHam ,handleColseHam} = hamburgerSlice.actions;
 
 export default hamburgerSlice.reducer;
