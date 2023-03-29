@@ -5,7 +5,7 @@ import Hamburger from "../../components/Hamburger";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 // =========================================
-const setting = () => {
+const Setting = () => {
   const isHamOpen = useSelector((state) => state.hamburger.value);
   return (
     <>
@@ -46,4 +46,4 @@ const setting = () => {
     </>
   );
 };
-export default setting;
+export default Setting;

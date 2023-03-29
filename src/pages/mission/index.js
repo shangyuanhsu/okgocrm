@@ -5,7 +5,7 @@ import Hamburger from "../../components/Hamburger";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 // =========================================
-const mission = () => {
+const Mission = () => {
   const isHamOpen = useSelector((state) => state.hamburger.value);
   return (
     <>
@@ -30,4 +30,4 @@ const mission = () => {
     </>
   );
 };
-export default mission;
+export default Mission;

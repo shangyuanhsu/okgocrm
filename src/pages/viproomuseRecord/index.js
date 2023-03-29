@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import Hamburger from "../../components/Hamburger";
 import { useSelector } from "react-redux";
 // =========================================
-const viproomuseRecord = () => {
+const ViproomuseRecord = () => {
   const isHamOpen = useSelector((state) => state.hamburger.value);
   return (
     <>
@@ -29,4 +29,4 @@ const viproomuseRecord = () => {
     </>
   );
 };
-export default viproomuseRecord;
+export default ViproomuseRecord;

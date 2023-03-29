@@ -5,7 +5,7 @@ import Hamburger from "../../components/Hamburger";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 // =========================================
-const rewardsRedemption = () => {
+const RewardsRedemption = () => {
   const isHamOpen = useSelector((state) => state.hamburger.value);
   return (
     <>
@@ -29,4 +29,4 @@ const rewardsRedemption = () => {
     </>
   );
 };
-export default rewardsRedemption;
+export default RewardsRedemption;

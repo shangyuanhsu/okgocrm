@@ -366,7 +366,7 @@ const MemberCardPiont = ({ memberData }) => {
   };
   useEffect(() => {
     updateTransactionTime(0);
-  }, []);
+  });
   return (
     <>
       <Head>
