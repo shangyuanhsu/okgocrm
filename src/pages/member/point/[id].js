@@ -364,9 +364,7 @@ const MemberCardPiont = ({ memberData }) => {
     key === 0 ? setSearchTransactionFrom(val) : setSearchTransactionTo(val);
     updateTransactionTime(key);
   };
-  useEffect(() => {
-    updateTransactionTime(0);
-  });
+
   return (
     <>
       <Head>
@@ -383,7 +381,7 @@ const MemberCardPiont = ({ memberData }) => {
           <Footer />
         </div>
         <main>
-        <Hamburger />
+          <Hamburger />
           <h2>
             <Link className="notThisPage" href="/member">
               Member
