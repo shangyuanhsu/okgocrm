@@ -202,6 +202,7 @@ main>h2 a.notThisPage {
 }
 
 input {
+  padding: 12px !important;
   outline: none;
   font-size: 16px;
 }
@@ -240,6 +241,7 @@ input {
   border-radius: 4px;
   color: white;
   background-color: rgb(171, 171, 171);
+  font-size: 18px;
 }
 
 .myButtonMain {
@@ -309,6 +311,5 @@ input {
   border: 1px solid #d7d7dc;
   border-radius: 4px;
   padding: 8px;
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
+
 }

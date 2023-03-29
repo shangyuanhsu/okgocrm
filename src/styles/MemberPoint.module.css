@@ -16,7 +16,12 @@
 
 @media only screen and (max-width: 1150px) {
     .transactionRecordsTimeBox {
-        display: block;
+        align-items: stretch;
+        margin: 20px 0;
+        flex-direction: column;
+    }
+    .transactionRecordsTimeBox >div{
+        margin: 10px 0 0 0;
     }
 
     .transactionRecordsTimeBox>span {

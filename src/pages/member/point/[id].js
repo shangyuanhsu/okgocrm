@@ -11,8 +11,11 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Pagination from "@mui/material/Pagination";
 import Hamburger from "../../../components/Hamburger";
 import { useSelector } from "react-redux";
-
-
+import dayjs from "dayjs";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import "dayjs/locale/zh-cn";
 
 export const getServerSideProps = (context) => {
   const { id } = context.query;
@@ -645,27 +648,29 @@ const MemberCardPiont = ({ memberData, transactionRecordsArr }) => {
                   <b>Transaction Records</b>
                 </p>
                 <div className={styles.transactionRecordsTimeBox}>
-                  <input
-                    className="myInputDate"
-                    type="date"
-                    min="2020-01-01"
-                    value={searchTransactionFrom}
-                    pattern="\d{4}-\d{2}-\d{2}"
-                    onChange={(e) =>
-                      handleSearchTransactionTime(e.target.value, 0)
-                    }
-                  />
+                  <LocalizationProvider
+                    dateAdapter={AdapterDayjs}
+                    adapterLocale="zh-cn"
+                  >
+                    <DatePicker
+                      format="YYYY-MM-DD"
+                      sx={{ flexGrow: 1 }}
+                      value={dayjs(searchTransactionFrom)}
+                      onChange={(e) => handleSearchTransactionTime(e, 0)}
+                    />
+                  </LocalizationProvider>
                   <span></span>
-                  <input
-                    className="myInputDate"
-                    type="date"
-                    min="2020-01-01"
-                    value={searchTransactionTo}
-                    pattern="\d{4}-\d{2}-\d{2}"
-                    onChange={(e) =>
-                      handleSearchTransactionTime(e.target.value, 1)
-                    }
-                  />
+                  <LocalizationProvider
+                    dateAdapter={AdapterDayjs}
+                    adapterLocale="zh-cn"
+                  >
+                    <DatePicker
+                      format="YYYY-MM-DD"
+                      sx={{ flexGrow: 1 }}
+                      value={dayjs(searchTransactionTo)}
+                      onChange={(e) => handleSearchTransactionTime(e, 1)}
+                    />
+                  </LocalizationProvider>
                 </div>
                 <div>
                   <TableList
