@@ -1,7 +1,9 @@
 # okgo CRM
 
+coding...
+
 ### 🎮
-[]
+[https://okgocrm.vercel.app]
 
 ### Next.js + material-ui
 
