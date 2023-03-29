@@ -21,7 +21,7 @@ const Header = () => {
   };
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-  }, [handleResize]);
+  }, []);
   return (
     <header className={styles.Header}>
       <h1>

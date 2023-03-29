@@ -656,7 +656,7 @@ const MemberCardPiont = ({ memberData, transactionRecordsArr }) => {
                       format="YYYY-MM-DD"
                       sx={{ flexGrow: 1 }}
                       value={dayjs(searchTransactionFrom)}
-                      onChange={(e) => handleSearchTransactionTime(e, 0)}
+                      onChange={(newValue) => handleSearchTransactionTime(newValue, 0)}
                     />
                   </LocalizationProvider>
                   <span></span>
@@ -668,7 +668,7 @@ const MemberCardPiont = ({ memberData, transactionRecordsArr }) => {
                       format="YYYY-MM-DD"
                       sx={{ flexGrow: 1 }}
                       value={dayjs(searchTransactionTo)}
-                      onChange={(e) => handleSearchTransactionTime(e, 1)}
+                      onChange={(newValue) => handleSearchTransactionTime(newValue, 1)}
                     />
                   </LocalizationProvider>
                 </div>
