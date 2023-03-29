@@ -6,6 +6,8 @@ import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import RadioButtons from "../../../components/RadioButtons";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import Hamburger from "../../../components/Hamburger";
+import { useSelector } from "react-redux";
 
 export const getServerSideProps = (context) => {
   const { id } = context.query;
@@ -37,6 +39,7 @@ export const getServerSideProps = (context) => {
 };
 
 const MemberCard = ({ memberData }) => {
+  const isHamOpen = useSelector((state) => state.hamburger.value);
   const router = useRouter();
   // 此會員的原始資料
   const [OGmemberData, setOGmemberData] = useState(
@@ -91,11 +94,12 @@ const MemberCard = ({ memberData }) => {
       </Head>
 
       <div className="allSection">
-        <div>
+        <div className={isHamOpen ? "ham" : ""}>
           <Header />
           <Footer />
         </div>
         <main>
+        <Hamburger />
           <h2>
             <Link className="notThisPage" href="/member">
               Member

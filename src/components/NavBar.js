@@ -1,9 +1,10 @@
 import styles from "../styles/NavBar.module.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+
 import Link from "next/link";
 // =========================================
-const NavBar = () => {
+const NavBar = (props) => {
   const router = useRouter();
   // 選單
   const nav = [
@@ -14,6 +15,8 @@ const NavBar = () => {
     { name: "Mission", url: "/mission" },
     { name: "VIP Room Use Recode", url: "/viproomuseRecord" },
   ];
+
+
   return (
     <nav className={styles.NavBar}>
       {nav.map((item, index) => (
@@ -23,6 +26,7 @@ const NavBar = () => {
           }
           href={item.url}
           key={index}
+          onClick={props.handleHamburger}
         >
           {item.name}
         </Link>

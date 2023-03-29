@@ -9,6 +9,8 @@ import Popup from "../../../components/Popup";
 import TableList from "../../../components/TableList";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Pagination from "@mui/material/Pagination";
+import Hamburger from "../../../components/Hamburger";
+import { useSelector } from "react-redux";
 
 export const getServerSideProps = (context) => {
   const { id } = context.query;
@@ -40,6 +42,7 @@ export const getServerSideProps = (context) => {
 };
 
 const MemberCardPiont = ({ memberData }) => {
+  const isHamOpen = useSelector((state) => state.hamburger.value);
   const router = useRouter();
   // 此會員的原始資料
   const [OGmemberData, setOGmemberData] = useState(
@@ -82,7 +85,7 @@ const MemberCardPiont = ({ memberData }) => {
   const tableTitle = () => {
     return (
       <tr>
-        <th width="100"></th>
+        <th max-width="100"></th>
         <th>Date</th>
         <th>Shop</th>
         <th>Total</th>
@@ -362,7 +365,6 @@ const MemberCardPiont = ({ memberData }) => {
     updateTransactionTime(key);
   };
   useEffect(() => {
-    console.log("a");
     updateTransactionTime(0);
   }, []);
   return (
@@ -376,11 +378,12 @@ const MemberCardPiont = ({ memberData }) => {
       </Head>
 
       <div className="allSection">
-        <div>
+        <div className={isHamOpen ? "ham" : ""}>
           <Header />
           <Footer />
         </div>
         <main>
+        <Hamburger />
           <h2>
             <Link className="notThisPage" href="/member">
               Member

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import SearchMember from "../../components/SearchMember";
@@ -6,7 +6,8 @@ import TableList from "../../components/TableList";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Pagination from "@mui/material/Pagination";
-
+import Hamburger from "../../components/Hamburger";
+import { useSelector } from "react-redux";
 // =========================================
 // api 資料
 export const getServerSideProps = () => {
@@ -105,6 +106,7 @@ export const getServerSideProps = () => {
 };
 // =========================================
 const Member = ({ memberData }) => {
+  const isHamOpen = useSelector((state) => state.hamburger.value);
   const router = useRouter();
   // =========================================
   // 顯示用的資料
@@ -145,7 +147,11 @@ const Member = ({ memberData }) => {
   const showMember = () => {
     const data = memberDataArray.map((element) => {
       return (
-        <tr onClick={() => handleSelectMember(element.id)} key={element.id} className="tablePointer">
+        <tr
+          onClick={() => handleSelectMember(element.id)}
+          key={element.id}
+          className="tablePointer"
+        >
           <td>{element.id}</td>
           <td>{element.firstName}</td>
           <td>{element.phoneno}</td>
@@ -182,19 +188,25 @@ const Member = ({ memberData }) => {
         <title>okgo | member</title>
         <meta name="description" content="okgo crm" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="shangyuan" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="allSection">
-        <div>
+        <div className={isHamOpen ? "ham" : ""}>
           <Header />
           <Footer />
         </div>
         <main>
+          <Hamburger />
           <h2>Member</h2>
           <section>
             <SearchMember takeSearchMember={takeSearchMember} />
             <div>
-              <TableList tableTitle={tableTitle} showData={showMember} hasPointer={true}/>
+              <TableList
+                tableTitle={tableTitle}
+                showData={showMember}
+                hasPointer={true}
+              />
               {allDataLength > 1 && (
                 <div className="paginationBox">
                   <Pagination

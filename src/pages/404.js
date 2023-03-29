@@ -8,6 +8,7 @@ const ErrorPage = () => {
       <Head>
         <title>okgo | error</title>
         <meta name="description" content="okgo crm" />
+        <meta name="author" content="shangyuan" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
