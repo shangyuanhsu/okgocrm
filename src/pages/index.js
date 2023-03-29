@@ -9,12 +9,15 @@ import { handleLoading } from "../features/allSet/allSet";
 const Home = () => {
   const isHamOpen = useSelector((state) => state.hamburger.value);
   const dispatch = useDispatch();
+  const change=(bol)=>{
+    dispatch(handleLoading(bol));
+  }
   useEffect(() => {
-    dispatch(handleLoading(true));
+    change(true)
     setTimeout(() => {
-      dispatch(handleLoading(false));
+      change(false)
     }, 1500);
-  }, []);
+  });
   return (
     <>
       <Head>
