@@ -1,0 +1,15 @@
+.addMember {
+    width: 150px;
+    margin: 20px 0 -20px 0;
+    margin-left: auto;
+    text-align: center;
+    color: #080836;
+    border: 1px solid #080836;
+    padding: 8px 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: bold;
+    cursor: pointer;
+}

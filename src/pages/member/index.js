@@ -1,3 +1,4 @@
+import styles from "../../styles/Member.module.css"
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -8,6 +9,7 @@ import Header from "../../components/Header";
 import Pagination from "@mui/material/Pagination";
 import Hamburger from "../../components/Hamburger";
 import { useSelector } from "react-redux";
+
 // =========================================
 // api 資料
 export const getServerSideProps = () => {
@@ -201,6 +203,9 @@ const Member = ({ memberData }) => {
           <h2>Member</h2>
           <section>
             <SearchMember takeSearchMember={takeSearchMember} />
+            <div className={styles.addMember}>
+              + Member
+            </div>
             <div>
               <TableList
                 tableTitle={tableTitle}

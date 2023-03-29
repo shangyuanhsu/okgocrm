@@ -2,12 +2,19 @@ import Head from "next/head";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hamburger from "../components/Hamburger";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { handleLoading } from "../features/allSet/allSet";
 // =========================================
 const Home = () => {
   const isHamOpen = useSelector((state) => state.hamburger.value);
- 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(handleLoading(true));
+    setTimeout(() => {
+      dispatch(handleLoading(false));
+    }, 1500);
+  }, []);
   return (
     <>
       <Head>
@@ -26,7 +33,6 @@ const Home = () => {
         <main>
           <Hamburger />
           <h2>Home</h2>
-          {/* {count} */}
         </main>
       </div>
     </>

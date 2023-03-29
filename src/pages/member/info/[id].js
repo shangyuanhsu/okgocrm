@@ -114,7 +114,7 @@ const MemberCard = ({ memberData }) => {
                 handleChangeTab("info");
               }}
             >
-              Basic personal info
+              Info
             </div>
             |
             <div

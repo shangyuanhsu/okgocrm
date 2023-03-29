@@ -578,7 +578,7 @@ const MemberCardPiont = ({ memberData, transactionRecordsArr }) => {
                 handleChangeTab("info");
               }}
             >
-              Basic personal info
+              Info
             </div>
             |
             <div
