@@ -1,0 +1,29 @@
+.homeBox {
+    padding: 20px 60px;
+}
+
+.chartBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.chartBox1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.chartBox2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.chartBox3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}

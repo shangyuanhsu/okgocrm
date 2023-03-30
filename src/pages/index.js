@@ -1,6 +1,10 @@
+import styles from "../styles/Home.module.css";
 import Head from "next/head";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import BarChart from "../components/BarChart";
+import AreaChart from "../components/AreaChart";
+import PieChart from "../components/PieChart";
 import Hamburger from "../components/Hamburger";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -26,6 +30,20 @@ const Home = () => {
         <main>
           <Hamburger />
           <h2>Home</h2>
+          <div className={styles.homeBox}>
+            <div></div>
+            <div className={styles.chartBox}>
+              <div className={styles.chartBox1}>
+                <BarChart />
+              </div>
+              <div className={styles.chartBox2}>
+                <AreaChart />
+              </div>
+              <div className={styles.chartBox3}>
+                <PieChart />
+              </div>
+            </div>
+          </div>
         </main>
       </div>
     </>
