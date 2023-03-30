@@ -15,12 +15,14 @@ const Header = () => {
   const handleHamburger = () => {
     dispatch(handleHam());
   };
-
   const handleResize = () => {
     dispatch(handleColseHam());
   };
   useEffect(() => {
     window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   });
   return (
     <header className={styles.Header}>

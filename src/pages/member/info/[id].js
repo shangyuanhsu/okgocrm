@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 
 export const getServerSideProps = (context) => {
   const { id } = context.query;
+
   const memberContent = {
     id: "ty8854",
     firstName: "Sherry",
@@ -28,6 +29,29 @@ export const getServerSideProps = (context) => {
       expirationDate: "2027-11-04",
     },
   };
+  if (id == 0) {
+    return {
+      props: {
+        memberData: {
+          id: "0",
+          firstName: "",
+          lastName: "",
+          phoneno: "",
+          email: "",
+          address: "",
+          status: "0",
+          registrationDate: "",
+          updatedDate: "",
+          totalPoint: 0,
+          vipCrad: {
+            id: "",
+            level: "",
+            expirationDate: "",
+          },
+        },
+      },
+    };
+  }
   if (id != memberContent.id) {
     return {
       notFound: true,
@@ -48,7 +72,7 @@ const MemberCard = ({ memberData }) => {
   // 顯示會員資料
   const [member, setMember] = useState({ ...OGmemberData });
   // 使否處在可修改的狀態
-  const [isEdit, setIsEdit] = useState(false);
+  const [isEdit, setIsEdit] = useState(member.id == 0 ? true : false);
   // 狀態的選項
   const radioStatus = [
     { key: "0", name: "Open" },
@@ -58,12 +82,15 @@ const MemberCard = ({ memberData }) => {
 
   // =========================================
   // 輸入值
-  const handlenewTxt = (val, key) => {
+  const handlenewTxt = (val, key, key2 = null) => {
     console.log(val, key);
-    member[key] = val;
+    if (key2) {
+      member[key][key2] = val;
+    } else {
+      member[key] = val;
+    }
     setMember({
       ...member,
-      [key]: val,
     });
   };
   // 還原
@@ -71,7 +98,12 @@ const MemberCard = ({ memberData }) => {
     setMember({ ...OGmemberData });
   };
   // 改變值
-  const handleSaveData = () => {
+  const handleSaveData = async () => {
+    if (member.id == 0) {
+      await router.push(`/member/info/ty8854`);
+      router.reload();
+      return;
+    }
     setOGmemberData({ ...member });
     setIsEdit(false);
   };
@@ -99,32 +131,38 @@ const MemberCard = ({ memberData }) => {
           <Footer />
         </div>
         <main>
-        <Hamburger />
+          <Hamburger />
           <h2>
             <Link className="notThisPage" href="/member">
               Member
             </Link>
             <ChevronRightIcon fontSize="small" />
-            {OGmemberData.firstName}&nbsp;{OGmemberData.lastName}
+            {OGmemberData.firstName == ""
+              ? "Hello, New Friend"
+              : `${OGmemberData.firstName} ${OGmemberData.lastName}`}
           </h2>
           <section className="myTabBox">
-            <div
-              className="myTab myTabChecked"
-              onClick={() => {
-                handleChangeTab("info");
-              }}
-            >
-              Info
-            </div>
-            |
-            <div
-              className="myTab"
-              onClick={() => {
-                handleChangeTab("point");
-              }}
-            >
-              Point
-            </div>
+            {member.id != 0 && (
+              <>
+                <div
+                  className="myTab myTabChecked"
+                  onClick={() => {
+                    handleChangeTab("info");
+                  }}
+                >
+                  Info
+                </div>
+                |
+                <div
+                  className="myTab"
+                  onClick={() => {
+                    handleChangeTab("point");
+                  }}
+                >
+                  Point
+                </div>
+              </>
+            )}
           </section>
 
           <section>
@@ -189,15 +227,19 @@ const MemberCard = ({ memberData }) => {
                 <p>
                   <b>Address</b>
                 </p>
-                <input
-                  className={`myInput ${!isEdit ? "myInputReadonly" : ""}`}
-                  readOnly={!isEdit}
-                  type="text"
-                  value={member.address}
-                  onChange={(e) =>
-                    isEdit && handlenewTxt(e.target.value, "address")
-                  }
-                />
+
+                {isEdit ? (
+                  <textarea
+                    className="myTextarea"
+                    value={member.address}
+                    readOnly={!isEdit}
+                    onChange={(e) =>
+                      isEdit && handlenewTxt(e.target.value, "address")
+                    }
+                  ></textarea>
+                ) : (
+                  <p className="myInputReadonly myPReadonly">{member.address}</p>
+                )}
               </div>
             </div>
 
@@ -207,10 +249,15 @@ const MemberCard = ({ memberData }) => {
                   <b>Vip Crad ID</b>
                 </p>
                 <input
-                  className={`myInput myInputReadonly`}
-                  readOnly
+                  className={`myInput ${
+                    member.id != 0 ? "myInputReadonly" : ""
+                  }`}
+                  readOnly={member.id == 0 ? false : true}
                   type="text"
                   value={member.vipCrad.id}
+                  onChange={(e) =>
+                    isEdit && handlenewTxt(e.target.value, "vipCrad", "id")
+                  }
                 />
               </div>
               <div>
@@ -218,10 +265,15 @@ const MemberCard = ({ memberData }) => {
                   <b>Vip Crad Level</b>
                 </p>
                 <input
-                  className={`myInput myInputReadonly`}
-                  readOnly
+                  className={`myInput ${
+                    member.id != 0 ? "myInputReadonly" : ""
+                  }`}
+                  readOnly={member.id == 0 ? false : true}
                   type="text"
                   value={member.vipCrad.level}
+                  onChange={(e) =>
+                    isEdit && handlenewTxt(e.target.value, "vipCrad", "level")
+                  }
                 />
               </div>
 
@@ -230,59 +282,81 @@ const MemberCard = ({ memberData }) => {
                   <b>Vip Crad Expiration Date</b>
                 </p>
                 <input
-                  className={`myInput myInputReadonly`}
-                  readOnly
+                  className={`myInput ${
+                    member.id != 0 ? "myInputReadonly" : ""
+                  }`}
+                  readOnly={member.id == 0 ? false : true}
                   type="text"
                   value={member.vipCrad.expirationDate}
+                  onChange={(e) =>
+                    isEdit &&
+                    handlenewTxt(e.target.value, "vipCrad", "expirationDate")
+                  }
                 />
               </div>
             </div>
-            <div className="formBlock">
-              <div>
-                <p>
-                  <b>Updated Date</b>
-                </p>
-                <input
-                  className={`myInput myInputReadonly`}
-                  readOnly
-                  type="text"
-                  value={member.updatedDate}
-                />
-              </div>
-              <div>
-                <p>
-                  <b>Status</b>
-                </p>
-                <RadioButtons
-                  radioTitle="status"
-                  radioOption={radioStatus}
-                  defaultVal={member.status}
-                  isEdit={isEdit}
-                  handleChangeStatus={handlenewTxt}
-                />
-              </div>
-            </div>
-            {isEdit ? (
-              <div className="myButtonBox">
-                <button className="myButton" onClick={handleResetData}>
-                  Reset
-                </button>
-                <button
-                  className="myButton myButtonAlert"
-                  onClick={handleSaveData}
-                >
-                  Save
-                </button>
-              </div>
-            ) : (
-              <div className="myButtonBox">
-                <button
-                  className="myButton myButtonMain"
-                  onClick={handleEditData}
-                >
-                  Edit
-                </button>
-              </div>
+            {member.id != 0 && (
+              <>
+                <div className="formBlock">
+                  <div>
+                    <p>
+                      <b>Updated Date</b>
+                    </p>
+                    <input
+                      className={`myInput myInputReadonly`}
+                      readOnly
+                      type="text"
+                      value={member.updatedDate}
+                    />
+                  </div>
+                  <div>
+                    <p>
+                      <b>Status</b>
+                    </p>
+                    <RadioButtons
+                      radioTitle="status"
+                      radioOption={radioStatus}
+                      defaultVal={member.status}
+                      isEdit={isEdit}
+                      handleChangeStatus={handlenewTxt}
+                    />
+                  </div>
+                </div>
+                {isEdit ? (
+                  <div className="myButtonBox">
+                    <button className="myButton" onClick={handleResetData}>
+                      Reset
+                    </button>
+                    <button
+                      className="myButton myButtonAlert"
+                      onClick={handleSaveData}
+                    >
+                      Save
+                    </button>
+                  </div>
+                ) : (
+                  <div className="myButtonBox">
+                    <button
+                      className="myButton myButtonMain"
+                      onClick={handleEditData}
+                    >
+                      Edit
+                    </button>
+                  </div>
+                )}
+              </>
+            )}
+            {member.id == 0 && (
+              <>
+                <div className="myButtonBox">
+                  <button
+                    className="myButton myButtonAlert"
+                    onClick={handleSaveData}
+                  >
+                    Save
+                  </button>
+                </div>
+              </>
             )}
           </section>
         </main>

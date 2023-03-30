@@ -4,20 +4,10 @@ import Header from "../components/Header";
 import Hamburger from "../components/Hamburger";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { handleLoading } from "../features/allSet/allSet";
 // =========================================
 const Home = () => {
   const isHamOpen = useSelector((state) => state.hamburger.value);
-  const dispatch = useDispatch();
-  const change=(bol)=>{
-    dispatch(handleLoading(bol));
-  }
-  useEffect(() => {
-    change(true)
-    setTimeout(() => {
-      change(false)
-    }, 1500);
-  });
+
   return (
     <>
       <Head>

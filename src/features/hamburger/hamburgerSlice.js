@@ -11,11 +11,13 @@ export const hamburgerSlice = createSlice({
       state.value = !state.value;
     },
     handleColseHam: (state) => {
-      state.value =false;
+      if (state.value === true && window.innerWidth >= 1150) {
+        state.value = false;
+      }
     },
   },
 });
 
-export const { handleHam ,handleColseHam} = hamburgerSlice.actions;
+export const { handleHam, handleColseHam } = hamburgerSlice.actions;
 
 export default hamburgerSlice.reducer;
