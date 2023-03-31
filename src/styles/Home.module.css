@@ -2,9 +2,25 @@
     padding: 20px 60px;
 }
 
+@media only screen and (max-width: 1150px) {
+    .homeBox {
+        padding: 20px;
+    }
+}
+
 .chartBox {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 500px 300px;
+    align-items: stretch;
+    justify-content: space-between;
+    justify-items: stretch;
+}
+
+@media only screen and (max-width: 852px) {
+    .chartBox {
+        grid-template-rows: 350px 300px;
+    }
 }
 
 .chartBox1 {
@@ -26,4 +42,31 @@
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
+}
+
+@media only screen and (max-width: 742px) {
+    .chartBox {
+        grid-template-rows: 300px 300px 300px;
+    }
+
+    .chartBox1 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .chartBox2 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .chartBox3 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 5;
+    }
 }

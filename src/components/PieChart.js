@@ -4,6 +4,10 @@ import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+export const options = {
+  maintainAspectRatio: false 
+};
+
 export const data = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
   datasets: [
@@ -34,7 +38,7 @@ export const data = {
 const PieChart = () => {
   return (
     <>
-      <Pie data={data} />
+      <Pie data={data} options={options}/>
     </>
   );
 };
