@@ -1,11 +1,14 @@
 .homeBox {
-    padding: 20px 60px;
+    padding: 20px;
 }
-
-@media only screen and (max-width: 1150px) {
-    .homeBox {
-        padding: 20px;
-    }
+.dashboardSay{
+    padding: 10px 0;
+    color: gray;
+}
+.controlBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 .chartBox {
@@ -16,6 +19,7 @@
     justify-content: space-between;
     justify-items: stretch;
 }
+
 
 @media only screen and (max-width: 852px) {
     .chartBox {
@@ -45,6 +49,10 @@
 }
 
 @media only screen and (max-width: 742px) {
+    .controlBox {
+        display: block;
+    }
+
     .chartBox {
         grid-template-rows: 300px 300px 300px;
     }

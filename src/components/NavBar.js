@@ -8,7 +8,7 @@ const NavBar = (props) => {
   const router = useRouter();
   // 選單
   const nav = [
-    { name: "Home", url: "/" },
+    { name: "Dashboard", url: "/" },
     { name: "Member", url: "/member" },
     { name: "Rewards Redemption", url: "/rewardsRedemption" },
     { name: "Point Registration", url: "/pointRegistration" },

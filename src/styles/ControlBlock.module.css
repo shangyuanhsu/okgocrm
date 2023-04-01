@@ -1,0 +1,43 @@
+.controlBlock {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #080836;
+    border-radius: 8px;
+    line-height: 40px;
+    margin: 10px 0;
+}
+
+.controlBlock:nth-child(2) {
+    margin: 10px;
+}
+
+.data {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.directions {
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+}
+
+.directions span {
+    margin: 0 10px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.directions span>svg {
+    margin-right: 8px;
+}
+
+@media only screen and (max-width: 742px) {
+    .controlBlock {
+        width: auto;
+    }
+
+    .controlBlock:nth-child(2) {
+        margin: 10px 0;
+    }
+}
