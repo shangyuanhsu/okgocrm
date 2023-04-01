@@ -16,9 +16,9 @@ const SearchMember = (props) => {
   // =========================================
   return (
     <div className={styles.SearchMember}>
-      <div className={styles.SearchTitle}> Search member : </div>
       <div className={styles.SearchInput}>
         <TextField
+         label="Search Member ID"
           fullWidth
           id="fullWidth"
           onChange={(event) => {

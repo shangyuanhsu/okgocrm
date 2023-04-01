@@ -1,13 +1,7 @@
 .SearchMember {
-    display: flex;
-    align-items: center;
     margin-top: 40px;
 }
 
-.SearchTitle {
-    font-weight: bold;
-    width: 160px;
-}
 
 .SearchInput {
     width: 100%;

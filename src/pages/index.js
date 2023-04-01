@@ -54,7 +54,7 @@ const Home = () => {
           <Hamburger />
           <h2>Welcome back</h2>
 
-          <div className={styles.homeBox}>
+          <section className={styles.homeBox}>
             <p className={styles.dashboardSay}>
               Here is what&apos;s happening with your store today.
             </p>
@@ -74,7 +74,7 @@ const Home = () => {
                 <PieChart />
               </div>
             </div>
-          </div>
+          </section>
         </main>
       </div>
     </>
