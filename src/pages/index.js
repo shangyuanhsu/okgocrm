@@ -56,7 +56,7 @@ const Home = () => {
 
           <div className={styles.homeBox}>
             <p className={styles.dashboardSay}>
-              Here is what's happening with your store today.
+              Here is what&apos;s happening with your store today.
             </p>
             <div className={styles.controlBox}>
               <ControlBlock option={todaySales} />
