@@ -14,6 +14,7 @@ import { useSelector, useDispatch } from "react-redux";
 const Home = () => {
   const isHamOpen = useSelector((state) => state.hamburger.value);
   const todaySales = {
+    icon: "MonetizationOnIcon",
     title: "Today sales",
     show: "$825,1254",
     isUp: true,
@@ -21,18 +22,20 @@ const Home = () => {
     directions: "+18.4K",
   };
   const member = {
+    icon: "PeopleAltIcon",
     title: "Members",
     show: "2008",
     isUp: true,
     percent: "10%",
-    directions: "+100",
+    directions: "+1000",
   };
   const todayOrders = {
+    icon: "FactCheckIcon",
     title: "Today orders",
     show: "2,625",
-    isUp: true,
+    isUp: false,
     percent: "1%",
-    directions: "+5K",
+    directions: "-5k",
   };
 
   return (

@@ -7,6 +7,14 @@
     margin: 10px 0;
 }
 
+.controlBlock>p {
+    display: flex;
+    align-items: center;
+}
+.controlBlock>p>span{
+    margin-left: 8px;
+}
+
 .controlBlock:nth-child(2) {
     margin: 10px;
 }
@@ -20,14 +28,20 @@
     color: gray;
     display: flex;
     justify-content: space-between;
+    font-size: 14px;
 }
 
-.directions span {
+.directions>span {
     margin: 0 10px 0 0;
     display: flex;
     align-items: center;
 }
-
+.green{
+    color: rgb(14, 90, 14);
+}
+.red{
+    color: rgb(180, 20, 20);
+}
 .directions span>svg {
     margin-right: 8px;
 }
