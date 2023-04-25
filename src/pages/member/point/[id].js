@@ -590,7 +590,6 @@ const MemberCardPiont = ({ memberData, transactionRecordsArr }) => {
               Point
             </div>
           </section>
-
           <section className="formBlockFlex2">
             <div className="formBlock ">
               <div>

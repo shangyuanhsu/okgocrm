@@ -1,3 +1,4 @@
+import styles from "../../styles/Setting.module.css";
 import Head from "next/head";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -38,6 +39,7 @@ const Setting = () => {
         <main>
           <Hamburger />
           <h2>Setting</h2>
+          <h3 className={styles.zoneTitle}>Personal Information</h3>
           <section>
             <div className="formBlock">
               <div>
@@ -120,6 +122,10 @@ const Setting = () => {
                   }
                 /></div>
             </div>
+          </section>
+
+          <h3 className={styles.zoneTitle}>Emergency Contact</h3>
+          <section className="formBlockFlex2">
             {adminData.partner.map(element => {
               return (
                 <div className="formBlock" key={element.id}>
