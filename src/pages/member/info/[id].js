@@ -335,7 +335,7 @@ const MemberCard = ({ memberData }) => {
                     </button>
                   </div>
                 ) : (
-                  <div className="myButtonBox">
+                 <div className="myButtonBox">
                     <button
                       className="myButton myButtonMain"
                       onClick={handleEditData}

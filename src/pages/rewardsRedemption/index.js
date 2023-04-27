@@ -23,7 +23,7 @@ const RewardsRedemption = () => {
         </div>
         <main>
           <Hamburger />
-          <h2>rewardsRedemption</h2>
+          <h2>Rewards Redemption</h2>
         </main>
       </div>
     </>

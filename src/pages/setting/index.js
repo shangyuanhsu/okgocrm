@@ -12,6 +12,10 @@ const Setting = () => {
   const ogAdminData = useSelector((state) => state.allSet.admin);
   const [adminData, setAdminData] = useState({ ...ogAdminData });
   // 使否處在可修改的狀態
+  // 此會員的原始資料
+  const [OGadminData, setOGadminData] = useState(
+    JSON.parse(JSON.stringify(ogAdminData))
+  );
   const [isEdit, setIsEdit] = useState(false);
   // 輸入值
   const handlenewTxt = (val, key) => {
@@ -21,6 +25,22 @@ const Setting = () => {
       ...adminData,
     });
   };
+  // 想要修改值
+  const handleEditData = () => {
+    setIsEdit(true);
+  };
+  // 還原
+  const handleResetData = () => {
+    setAdminData({ ...OGadminData });
+  };
+  // 改變值
+  const handleSaveData = async () => {
+    setOGadminData({ ...adminData });
+    setIsEdit(false);
+  };
+  const handleResetPassword = () => {
+    console.log("handleResetPassword");
+  }
   console.log(adminData)
   return (
     <>
@@ -123,9 +143,36 @@ const Setting = () => {
                 /></div>
             </div>
           </section>
+          <p className={styles.resetPassword}  onClick={handleResetPassword}>Reset Password *</p>
+          {isEdit ? (
+            <div className="myButtonBox">
+              <button className="myButton" onClick={handleResetData}>
+                Reset
+              </button>
+              <button
+                className="myButton myButtonAlert"
+                onClick={handleSaveData}
+              >
+                Save
+              </button>
+            </div>
+          ) : (
+            <>
+              <div className="myButtonBox">
+                <button
+                  className="myButton myButtonMain"
+                  onClick={handleEditData}
+                >
+                  Edit
+                </button>
+              </div>
+
+            </>
+
+          )}
 
           <h3 className={styles.zoneTitle}>Emergency Contact</h3>
-          <section className="formBlockFlex2">
+          <section className={`formBlockFlex2 ${styles.sectionBottom}`}>
             {adminData.partner.map(element => {
               return (
                 <div className="formBlock" key={element.id}>
@@ -134,7 +181,7 @@ const Setting = () => {
                       <b>FirstName</b>
                     </p>
                     <input
-                      className={`myInput ${!isEdit ? "myInputReadonly" : ""}`}
+                      className={`myInput myInputReadonly`}
                       readOnly={true}
                       type="text"
                       value={element.firstName}
@@ -144,7 +191,7 @@ const Setting = () => {
                       <b>Location</b>
                     </p>
                     <input
-                      className={`myInput ${!isEdit ? "myInputReadonly" : ""}`}
+                      className={`myInput myInputReadonly`}
                       readOnly={true}
                       type="text"
                       value={element.location}
@@ -154,7 +201,7 @@ const Setting = () => {
                       <b>Position</b>
                     </p>
                     <input
-                      className={`myInput ${!isEdit ? "myInputReadonly" : ""}`}
+                      className={`myInput myInputReadonly`}
                       readOnly={true}
                       type="text"
                       value={element.position}
@@ -164,7 +211,7 @@ const Setting = () => {
                       <b>Phone</b>
                     </p>
                     <input
-                      className={`myInput ${!isEdit ? "myInputReadonly" : ""}`}
+                      className={`myInput myInputReadonly`}
                       readOnly={true}
                       type="text"
                       value={element.phone}
@@ -174,7 +221,7 @@ const Setting = () => {
             })}
 
           </section>
-        </main>
+        </main >
       </div >
     </>
   );
