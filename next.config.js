@@ -4,6 +4,9 @@ const nextConfig = {
   // env: {
   // apiKey: 'api-key',//process.env.apiKey
   // },
+  images: {
+    domains: ['picsum.photos']
+  }
 };
 
 module.exports = nextConfig;

@@ -1,0 +1,154 @@
+.allRewards {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    grid-column-gap: 20px;
+}
+
+.memberShow {
+    padding: 10px 0;
+    line-height: 24px;
+    margin: 10px 0;
+}
+
+.item {
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 4px;
+    min-height: 200px;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 5px 10px;
+}
+
+.cancel {
+    cursor: pointer;
+    color: #d82626
+}
+
+.item>p {
+    color: rgba(210, 210, 210, 0.445);
+    text-align: center;
+    font-size: 30px;
+    padding: 20%;
+}
+
+.item>div {
+    padding: 10px 0;
+}
+
+.item>div:not(:first-child) {
+    border-top: 1px solid rgb(210, 210, 210);
+}
+
+.item>div>div {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    line-height: 24px;
+}
+
+.item>div>div>span:first-child {
+    font-weight: bold;
+}
+
+.item>div>div>span>input {
+    border: 1px solid rgb(210, 210, 210);
+    padding: 5px;
+    display: inline-block;
+    width: 100%;
+}
+
+.productOption {
+    border-radius: 4px;
+    margin: 48px 0;
+}
+
+.productOption>div {
+    display: inline-block;
+    width: 150px;
+    border: 1px solid;
+    border-color: gray;
+    color: gray;
+    ;
+    padding: 5px;
+    text-align: center;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.productOption>div:last-child {
+    margin-right: 0;
+}
+
+.productOption>div.all {
+    border-color: #080836;
+}
+
+.productOption>div.all.checked {
+    background-color: #080836;
+}
+
+.productOption>div.available {
+    color: rgb(15, 95, 15);
+    border-color: rgb(15, 95, 15);
+}
+
+.productOption>div.available.checked {
+    background-color: rgb(15, 95, 15);
+
+}
+
+.productOption>div.checked {
+    background-color: gray;
+    color: white;
+}
+
+.productShow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 10px 0;
+}
+
+.productShow>div {
+    opacity: 0.6;
+    border: 1px solid gray;
+    color: gray;
+    border-radius: 4px;
+    text-align: center;
+    padding: 8px 5px;
+    cursor: not-allowed;
+}
+
+.productImg {
+    border-radius: 70%;
+    overflow: hidden;
+    border: 2px solid white;
+}
+
+.productTitle {
+    margin: 8px 0;
+}
+
+.productPoint {
+    display: grid;
+    grid-template-columns: 40px 30px 40px 30px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.productPoint>span {
+    font-size: 12px;
+}
+
+.productShow>div.productAvailable {
+    opacity: 1;
+    border-color: rgb(15, 95, 15);
+    color: rgb(15, 95, 15);
+    cursor: pointer;
+}
+
+.productShow>div.productAvailable.productAvailableSelected {
+    background-color: rgb(15, 95, 15);
+    color: white;
+}

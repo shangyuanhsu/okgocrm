@@ -15,7 +15,7 @@ const SearchMember = (props) => {
   };
   // =========================================
   return (
-    <div className={styles.SearchMember}>
+    <div>
       <div className={styles.SearchInput}>
         <TextField
          label="Search Member ID"

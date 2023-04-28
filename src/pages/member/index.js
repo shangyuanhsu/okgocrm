@@ -202,7 +202,9 @@ const Member = ({ memberData }) => {
           <Hamburger />
           <h2>Member</h2>
           <section>
+            <div className={styles.SearchMember}>
             <SearchMember takeSearchMember={takeSearchMember} />
+            </div>
 
             <Link href="/member/info/0" className={styles.addMember}>
               + Member
