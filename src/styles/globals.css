@@ -37,7 +37,7 @@ button:hover {
 }
 
 main {
-  width: calc(100% - 300px);
+  width: calc(100% - 260px);
   height: 100vh;
   overflow-y: auto;
 }
@@ -94,7 +94,7 @@ main>h2 a.notThisPage {
 }
 
 .allSection>div {
-  width: 300px;
+  width: 260px;
   height: 100vh;
   background-color: #080836;
   overflow-y: auto;

@@ -1,4 +1,5 @@
 import styles from "../../styles/RewardsRedemption.module.css";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -16,11 +17,14 @@ import Image from "next/image";
 
 // =========================================
 const RewardsRedemption = () => {
+  const router = useRouter();
   const isHamOpen = useSelector((state) => state.hamburger.value);
   // 搜尋會員
   const [searchMember, setSearchMember] = useState("");
+  const [isShowProduct, setIsShowProduct] = useState(false);
   // 選擇tab
   const handleChangeTab = (tabName) => {
+    router.push(`/${tabName}`);
 
   };
   // 篩選會員
@@ -32,6 +36,10 @@ const RewardsRedemption = () => {
   const handleChange = (event) => {
     setData(event.target.value);
   };
+  const handleShowProduct = () => {
+    setIsShowProduct(!isShowProduct);
+    document.querySelector("body").style.overflow = !isShowProduct ? "hidden" : "";
+  }
   return (
     <>
       <Head>
@@ -46,14 +54,17 @@ const RewardsRedemption = () => {
           <Header />
           <Footer />
         </div>
+
         <main>
           <Hamburger />
           <h2>Rewards Redemption</h2>
+          <div className={isShowProduct ? styles.productBg : ""} onClick={handleShowProduct}></div>
+
           <section className="myTabBox">
             <div
               className="myTab myTabChecked"
               onClick={() => {
-                handleChangeTab("allRewards");
+                handleChangeTab("rewardsRedemption");
               }}
             >
               All Rewards
@@ -62,55 +73,33 @@ const RewardsRedemption = () => {
             <div
               className="myTab"
               onClick={() => {
-                handleChangeTab("discountPrivileges");
+                handleChangeTab("rewardsRedemption/discountAndPrivileges");
               }}
             >
               Discount & Privileges
             </div>
           </section>
+
           <section>
+
             <div className={styles.allRewards}>
               <div>
                 <SearchMember takeSearchMember={takeSearchMember} />
                 <div className={styles.memberShow}>
+                  {/* <p className={styles.tipChoose}>Please Search Member</p> */}
                   <p><b>Member : </b> Sara Hsu</p>
                   <p><b>Potin : </b>2000</p>
                   <p><b>Phone : </b>+886 9827361515</p>
                   <p><b>Email : </b>okgoSara@gmail.com</p>
                 </div>
-                <div className={styles.item}>
-                  {/* <p>Please Select</p> */}
+                <p className={styles.productBtn} onClick={handleShowProduct}>Show Product</p>
 
+                <div className={styles.item}>
+                  {/* <p className={styles.tipChoose}>Please Select Product</p> */}
                   <div>
                     <div>
                       <span><HighlightOffIcon className={styles.cancel} /></span>
-                      <span>1</span>
-                    </div>
-                    <div>
-                      <span>Product ID</span>
-                      <span>RR20200319120701</span>
-                    </div>
-                    <div>
-                      <span>Product Name</span>
-                      <span>okgo product A</span>
-                    </div>
-                    <div>
-                      <span>Quantity</span>
-                      <span><input type="number" defaultValue={1} min={0} /></span>
-                    </div>
-                    <div>
-                      <span>Points</span>
-                      <span>250</span>
-                    </div>
-                    <div>
-                      <span>ToTal</span>
-                      <span>250</span>
-                    </div>
-                  </div>
-                  <div>
-                    <div>
-                      <span ><HighlightOffIcon className={styles.cancel} /></span>
-                      <span>2</span>
+                      <span>3</span>
                     </div>
                     <div>
                       <span>Product ID</span>
@@ -159,7 +148,84 @@ const RewardsRedemption = () => {
                       <span>250</span>
                     </div>
                   </div>
-
+                  <div>
+                    <div>
+                      <span><HighlightOffIcon className={styles.cancel} /></span>
+                      <span>3</span>
+                    </div>
+                    <div>
+                      <span>Product ID</span>
+                      <span>RR20200319120701</span>
+                    </div>
+                    <div>
+                      <span>Product Name</span>
+                      <span>okgo product A</span>
+                    </div>
+                    <div>
+                      <span>Quantity</span>
+                      <span><input type="number" defaultValue={1} min={0} /></span>
+                    </div>
+                    <div>
+                      <span>Points</span>
+                      <span>250</span>
+                    </div>
+                    <div>
+                      <span>ToTal</span>
+                      <span>250</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <span><HighlightOffIcon className={styles.cancel} /></span>
+                      <span>3</span>
+                    </div>
+                    <div>
+                      <span>Product ID</span>
+                      <span>RR20200319120701</span>
+                    </div>
+                    <div>
+                      <span>Product Name</span>
+                      <span>okgo product A</span>
+                    </div>
+                    <div>
+                      <span>Quantity</span>
+                      <span><input type="number" defaultValue={1} min={0} /></span>
+                    </div>
+                    <div>
+                      <span>Points</span>
+                      <span>250</span>
+                    </div>
+                    <div>
+                      <span>ToTal</span>
+                      <span>250</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <span><HighlightOffIcon className={styles.cancel} /></span>
+                      <span>3</span>
+                    </div>
+                    <div>
+                      <span>Product ID</span>
+                      <span>RR20200319120701</span>
+                    </div>
+                    <div>
+                      <span>Product Name</span>
+                      <span>okgo product A</span>
+                    </div>
+                    <div>
+                      <span>Quantity</span>
+                      <span><input type="number" defaultValue={1} min={0} /></span>
+                    </div>
+                    <div>
+                      <span>Points</span>
+                      <span>250</span>
+                    </div>
+                    <div>
+                      <span>ToTal</span>
+                      <span>250</span>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="myButtonBox">
@@ -176,8 +242,7 @@ const RewardsRedemption = () => {
 
                 </div>
               </div>
-
-              <div>
+              <div className={isShowProduct ? styles.openProduct : ""}>
                 <FormControl fullWidth>
                   <Select
                     value={data}
@@ -246,9 +311,11 @@ const RewardsRedemption = () => {
                   </div>
                 </div>
               </div>
+
             </div>
 
           </section>
+
         </main>
 
       </div>
