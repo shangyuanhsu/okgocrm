@@ -1,0 +1,53 @@
+.receiptDataBox {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    grid-gap: 20px;
+}
+
+.receiptImgBox {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 8px;
+    margin: 24px 0;
+}
+
+.receiptImg {
+    color: gray;
+    width: 100%;
+    height: 400px;
+    background-color: rgb(227, 227, 227);
+    border-radius: 8px;
+    position: relative;
+}
+
+.receiptImg>span {
+    height:20px;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.receiptUploadBtn{
+    display: block;
+    padding: 5px 8px;
+    margin-left: auto;
+    cursor: pointer;
+}
+@media only screen and (max-width: 960px) {
+    .receiptDataBox {
+        display: block;
+    }
+    .receiptImgBox {
+        width: 350px;
+    }
+    .receiptUploadBtn{
+        margin-left:0;
+        margin-right: auto;
+    }
+}

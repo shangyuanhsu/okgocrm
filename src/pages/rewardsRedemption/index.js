@@ -69,14 +69,13 @@ const RewardsRedemption = () => {
             >
               All Rewards
             </div>
-            |
             <div
               className="myTab"
               onClick={() => {
                 handleChangeTab("rewardsRedemption/discountAndPrivileges");
               }}
             >
-              Discount & Privileges
+              Discount
             </div>
           </section>
 
@@ -85,8 +84,8 @@ const RewardsRedemption = () => {
             <div className={styles.allRewards}>
               <div>
                 <SearchMember takeSearchMember={takeSearchMember} />
-                <div className={styles.memberShow}>
-                  {/* <p className={styles.tipChoose}>Please Search Member</p> */}
+                <div className="memberShow">
+                  {/* <p className="tipChoose">Please Search Member</p> */}
                   <p><b>Member : </b> Sara Hsu</p>
                   <p><b>Potin : </b>2000</p>
                   <p><b>Phone : </b>+886 9827361515</p>
@@ -95,7 +94,7 @@ const RewardsRedemption = () => {
                 <p className={styles.productBtn} onClick={handleShowProduct}>Show Product</p>
 
                 <div className={styles.item}>
-                  {/* <p className={styles.tipChoose}>Please Select Product</p> */}
+                  {/* <p className="tipChoose">Please Select Product</p> */}
                   <div>
                     <div>
                       <span><HighlightOffIcon className={styles.cancel} /></span>
@@ -103,7 +102,7 @@ const RewardsRedemption = () => {
                     </div>
                     <div>
                       <span>Product ID</span>
-                      <span>RR20200319120701</span>
+                      <span>TR0975398</span>
                     </div>
                     <div>
                       <span>Product Name</span>
@@ -129,89 +128,11 @@ const RewardsRedemption = () => {
                     </div>
                     <div>
                       <span>Product ID</span>
-                      <span>RR20200319120701</span>
+                      <span>YT0394857</span>
                     </div>
                     <div>
                       <span>Product Name</span>
-                      <span>okgo product A</span>
-                    </div>
-                    <div>
-                      <span>Quantity</span>
-                      <span><input type="number" defaultValue={1} min={0} /></span>
-                    </div>
-                    <div>
-                      <span>Points</span>
-                      <span>250</span>
-                    </div>
-                    <div>
-                      <span>ToTal</span>
-                      <span>250</span>
-                    </div>
-                  </div>
-                  <div>
-                    <div>
-                      <span><HighlightOffIcon className={styles.cancel} /></span>
-                      <span>3</span>
-                    </div>
-                    <div>
-                      <span>Product ID</span>
-                      <span>RR20200319120701</span>
-                    </div>
-                    <div>
-                      <span>Product Name</span>
-                      <span>okgo product A</span>
-                    </div>
-                    <div>
-                      <span>Quantity</span>
-                      <span><input type="number" defaultValue={1} min={0} /></span>
-                    </div>
-                    <div>
-                      <span>Points</span>
-                      <span>250</span>
-                    </div>
-                    <div>
-                      <span>ToTal</span>
-                      <span>250</span>
-                    </div>
-                  </div>
-                  <div>
-                    <div>
-                      <span><HighlightOffIcon className={styles.cancel} /></span>
-                      <span>3</span>
-                    </div>
-                    <div>
-                      <span>Product ID</span>
-                      <span>RR20200319120701</span>
-                    </div>
-                    <div>
-                      <span>Product Name</span>
-                      <span>okgo product A</span>
-                    </div>
-                    <div>
-                      <span>Quantity</span>
-                      <span><input type="number" defaultValue={1} min={0} /></span>
-                    </div>
-                    <div>
-                      <span>Points</span>
-                      <span>250</span>
-                    </div>
-                    <div>
-                      <span>ToTal</span>
-                      <span>250</span>
-                    </div>
-                  </div>
-                  <div>
-                    <div>
-                      <span><HighlightOffIcon className={styles.cancel} /></span>
-                      <span>3</span>
-                    </div>
-                    <div>
-                      <span>Product ID</span>
-                      <span>RR20200319120701</span>
-                    </div>
-                    <div>
-                      <span>Product Name</span>
-                      <span>okgo product A</span>
+                      <span>okgo product B</span>
                     </div>
                     <div>
                       <span>Quantity</span>
@@ -265,7 +186,7 @@ const RewardsRedemption = () => {
                     <Image className={styles.productImg} src="https://picsum.photos/100/100?random=68" alt="productA"
                       width={100}
                       height={100} />
-                    <div className={styles.productTitle}>RR20200319120701</div>
+                    <div className={styles.productTitle}>TR0975398</div>
                     <div className={styles.productPoint}>
                       <span><DiamondIcon fontSize="small" /></span>
                       <span>100</span>
@@ -273,11 +194,11 @@ const RewardsRedemption = () => {
                       <span>1</span>
                     </div>
                   </div>
-                  <div className={styles.productAvailable}>
+                  <div className={`${styles.productAvailable} ${styles.productAvailableSelected}`}>
                     <Image className={styles.productImg} src="https://picsum.photos/100/100?random=998" alt="productA"
                       width={100}
                       height={100} />
-                    <div className={styles.productTitle}>RR20200319120701</div>
+                    <div className={styles.productTitle}>YT0394857</div>
                     <div className={styles.productPoint}>
                       <span><DiamondIcon fontSize="small" /></span>
                       <span>100</span>
@@ -289,7 +210,7 @@ const RewardsRedemption = () => {
                     <Image className={styles.productImg} src="https://picsum.photos/100/100?random=1" alt="productA"
                       width={100}
                       height={100} />
-                    <div className={styles.productTitle}>RR20200319120701</div>
+                    <div className={styles.productTitle}>PO0393827</div>
                     <div className={styles.productPoint}>
                       <span><DiamondIcon fontSize="small" /></span>
                       <span>100</span>
@@ -301,7 +222,7 @@ const RewardsRedemption = () => {
                     <Image className={styles.productImg} src="https://picsum.photos/100/100?random=371" alt="productA"
                       width={100}
                       height={100} />
-                    <div className={styles.productTitle}>RR20200319120701</div>
+                    <div className={styles.productTitle}>UW09293746</div>
                     <div className={styles.productPoint}>
                       <span><DiamondIcon fontSize="small" /></span>
                       <span>100</span>

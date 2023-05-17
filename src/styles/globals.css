@@ -228,7 +228,7 @@ input {
   width: 100%;
   border: 1px solid #d7d7dc;
   border-radius: 4px;
-  padding: 8px;
+  padding: 16.5px;
   margin-top: 8px;
   margin-bottom: 18px;
 }
@@ -310,13 +310,38 @@ input {
   color: rgb(171, 171, 171);
 }
 
+
+
 .myTab {
   font-size: 18px;
   font-weight: bold;
   padding: 8px;
   margin: 0 10px;
   cursor: pointer;
+  position: relative;
+}
 
+.myTab:not(:first-child):before{
+  content: "|";
+  position: absolute;
+  left: -10px;
+}
+
+@media only screen and (max-width: 696px) {
+  .myTabBox{
+    width: 94%;
+    display: grid;
+    grid-template-columns: 1fr  1fr ;
+    /* align-items: none; */
+    justify-items: stretch;
+  }
+  .myTab {
+    font-size: 16px;
+    /* word-break: break-all; */
+  }
+  .myTab:not(:nth-child(even)):before{
+    display: none;
+  }
 }
 
 .myTabChecked {
@@ -351,3 +376,25 @@ input {
   line-height: 1.5em;
 }
 
+.memberShow {
+  padding: 10px 0;
+  line-height: 24px;
+  margin: 10px 0;
+}
+
+.tipChoose {
+  color: rgba(210, 210, 210, 0.445);
+  text-align: center;
+  font-size: 30px;
+  padding: 20%;
+}
+
+.memberShow>.tipChoose {
+  text-align: left;
+  padding: 0;
+  font-size: 18px;
+}
+
+.myFormMargin {
+  margin: 8px 0 18px 0;
+}

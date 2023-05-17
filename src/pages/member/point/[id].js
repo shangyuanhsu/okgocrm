@@ -580,7 +580,6 @@ const MemberCardPiont = ({ memberData, transactionRecordsArr }) => {
             >
               Info
             </div>
-            |
             <div
               className="myTab myTabChecked"
               onClick={() => {

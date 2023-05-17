@@ -152,7 +152,6 @@ const MemberCard = ({ memberData }) => {
                 >
                   Info
                 </div>
-                |
                 <div
                   className="myTab"
                   onClick={() => {
